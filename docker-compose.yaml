@@ -4,13 +4,24 @@ services:
       context: .
       dockerfile: docker/nginx/Dockerfile
     ports:
-      - "8080:80"
+      - "${APP_PORT:-8080}:80"
     volumes:
       - .:/app
     depends_on:
       - php
     networks:
       - app-network
+      - pg-network
+  db:
+    build:
+      context: .
+      dockerfile: docker/db/Dockerfile
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    networks:
+      - pg-network
+    volumes:
+      - ./docker/db:/docker-entrypoint-initdb.d
 
   php:
     build:
@@ -20,6 +31,23 @@ services:
       - .:/app
     networks:
       - app-network
+      - pg-network
 
+  pgadmin-wdpai:
+    image: dpage/pgadmin4:latest
+    container_name: ${PGADMIN_CONTAINER_NAME:-pg-admin}
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@app.com"
+      PGADMIN_DEFAULT_PASSWORD: "pg"
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - pg-network
 networks:
   app-network:
+  pg-network:
+
+
+volumes:
+  pg-data:
+  ollama_data:
