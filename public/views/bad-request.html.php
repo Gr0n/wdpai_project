@@ -8,7 +8,6 @@
 <body>
     <main>
         <h1>400 — Nieprawidłowe żądanie</h1>
-        <p>Identyfikator utworu musi być dodatnią liczbą całkowitą.</p>
         <a href="/songs">Wróć do listy utworów</a>
     </main>
 </body>
