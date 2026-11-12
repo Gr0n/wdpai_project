@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <section aria-labelledby="welcome-heading">
         <p>Muzyka MIDI.</p>
@@ -19,4 +18,3 @@
         </article>
     </section>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>

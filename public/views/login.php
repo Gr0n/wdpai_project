@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <h1>Logowanie i rejestracja</h1>
     <nav aria-label="Logowanie lub rejestracja">
@@ -38,4 +37,3 @@
         </form>
     </section>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>

@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <h1><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></h1>
     <section aria-labelledby="moderation-heading">
@@ -21,4 +20,3 @@
         <?php endif; ?>
     </section>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>

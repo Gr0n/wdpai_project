@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <h1><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></h1>
     <form action="/songs" method="get">
@@ -35,4 +34,3 @@
         </ul>
     <?php endif; ?>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>

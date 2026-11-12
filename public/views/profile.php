@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <article>
         <h1><?= htmlspecialchars($profile['name'], ENT_QUOTES, 'UTF-8') ?></h1>
@@ -13,4 +12,3 @@
         </section>
     </article>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>

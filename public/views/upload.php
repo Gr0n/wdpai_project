@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/layout/header.php'; ?>
 <main>
     <h1>Dodaj utwór</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
@@ -34,4 +33,3 @@
         <button type="submit">Prześlij utwór</button>
     </form>
 </main>
-<?php require __DIR__ . '/layout/footer.php'; ?>
