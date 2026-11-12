@@ -1,4 +1,4 @@
-# KeyFall
+# MIDIWarrior
 
 Aplikacja webowa do nauki gry na pianinie: użytkownicy wrzucają własne utwory MIDI i odtwarzają je w odtwarzaczu ze spadającymi nutami (coś pomiędzy MuseScore a Synthesią).
 
