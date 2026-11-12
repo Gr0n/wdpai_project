@@ -18,7 +18,8 @@ final class DefaultController extends AppController
 
     public function notFound(): void
     {
-        $this->render('not-found', [
+        http_response_code(404);
+        $this->render('404', [
             'pageTitle' => 'Nie znaleziono strony',
         ]);
     }
