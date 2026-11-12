@@ -578,10 +578,16 @@ body > header > a {
 body > header nav ul {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.25rem;
   margin: 0;
   padding: 0.25rem;
   list-style: none;
+}
+
+body > header nav li {
+  display: flex;
+  align-items: center;
 }
 
 body > header nav a,
@@ -600,6 +606,44 @@ main > nav a:hover {
   color: var(--color-accent);
   background: var(--color-surface-selected);
   opacity: 1;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  color: var(--color-brand-contrast);
+  background: var(--color-brand);
+  filter: none;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle i {
+  font-style: normal;
+}
+
+.theme-toggle i::before {
+  content: "\263E";
+}
+
+[data-theme="dark"] .theme-toggle i::before {
+  content: "\2600";
 }
 
 main {

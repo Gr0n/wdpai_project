@@ -29,7 +29,7 @@
 </head>
 <body>
     <header>
-        <a href="/">MidiWarrior</a>
+        <a href="/">MIDIWarrior</a>
         <nav aria-label="Nawigacja główna">
             <ul>
                 <li><a href="/">Strona główna</a></li>
@@ -38,6 +38,21 @@
                 <li><a href="/profile">Profil</a></li>
                 <li><a href="/login">Logowanie</a></li>
                 <li><a href="/admin">Administracja</a></li>
+                <li>
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        aria-label="Włącz ciemny motyw"
+                        aria-pressed="false"
+                        title="Zmień motyw"
+                    >
+                        <i aria-hidden="true"></i>
+                        
+                    </button>
+                    
+                </li>
             </ul>
         </nav>
     </header>
+        <?= $content ?>
+    <script src="/js/theme.js" defer></script>
