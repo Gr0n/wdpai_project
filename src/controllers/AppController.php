@@ -32,7 +32,6 @@ abstract class AppController
         }
 
         require $layoutHeader;
-        echo $content;
         require $layoutFooter;
     }
 }
