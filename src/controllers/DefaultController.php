@@ -10,7 +10,9 @@ final class DefaultController extends AppController
     public function index(): void
     {
         $this->render('home', [
-            'pageTitle' => 'Moja aplikacja',
+            'pageTitle' => 'MidiWarrior',
+            'intro' => 'Odkrywaj muzykę.',
+            'platformDescription' => 'MidiWarrior to interaktywny odtwarzacz nut.',
         ]);
     }
 
