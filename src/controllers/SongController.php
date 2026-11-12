@@ -13,9 +13,27 @@ final class SongController extends AppController
 
     public function index(): void
     {
+        $searchTerm = isset($_GET['q']) && is_string($_GET['q'])
+            ? trim($_GET['q'])
+            : '';
+        $selectedCategory = isset($_GET['category']) && is_string($_GET['category'])
+            ? trim($_GET['category'])
+            : '';
+        $songs = array_values(array_filter(
+            self::SONGS,
+            static fn (array $song): bool =>
+                ($searchTerm === ''
+                    || stripos($song['title'], $searchTerm) !== false
+                    || stripos($song['artist'], $searchTerm) !== false)
+                && ($selectedCategory === '' || $song['category'] === $selectedCategory),
+        ));
+
         $this->render('songs', [
             'pageTitle' => 'Utwory',
-            'songs' => self::SONGS,
+            'songs' => $songs,
+            'searchTerm' => $searchTerm,
+            'selectedCategory' => $selectedCategory,
+            'categories' => array_values(array_unique(array_column(self::SONGS, 'category'))),
         ]);
     }
 
@@ -37,7 +55,7 @@ final class SongController extends AppController
         }
 
         http_response_code(404);
-        $this->render('not-found', [
+        $this->render('404', [
             'pageTitle' => 'Nie znaleziono utworu',
         ]);
     }
