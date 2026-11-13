@@ -1,12 +1,17 @@
 <main>
     <h1>Logowanie i rejestracja</h1>
     <nav aria-label="Logowanie lub rejestracja">
-        <a href="#login">Logowanie</a>
-        <a href="#registration">Rejestracja</a>
+        <button id="login" type="button" aria-controls="login-form" aria-pressed="true">
+            Logowanie
+        </button>
+        <button id="registration" type="button" aria-controls="registration-form" aria-pressed="false">
+            Rejestracja
+        </button>
     </nav>
-    <section id="login" aria-labelledby="login-heading">
+    <section id="login-form" aria-labelledby="login-heading">
         <h2 id="login-heading">Logowanie</h2>
         <form action="/login" method="post">
+            <input type="hidden" name="form_type" value="login">
             <div>
                 <label for="login-email">Adres e-mail</label>
                 <input id="login-email" name="email" type="email" autocomplete="email" required>
@@ -18,9 +23,10 @@
             <button type="submit">Zaloguj się</button>
         </form>
     </section>
-    <section id="registration" aria-labelledby="registration-heading">
+    <section id="registration-form" aria-labelledby="registration-heading" hidden>
         <h2 id="registration-heading">Rejestracja</h2>
         <form action="/login" method="post">
+            <input type="hidden" name="form_type" value="register">
             <div>
                 <label for="registration-name">Nazwa użytkownika</label>
                 <input id="registration-name" name="name" type="text" autocomplete="username" required>
@@ -37,3 +43,4 @@
         </form>
     </section>
 </main>
+<script src="/js/login.js" defer></script>

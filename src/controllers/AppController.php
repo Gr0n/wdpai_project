@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 abstract class AppController
 {
+    protected function isPost(): bool
+    {
+        return ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST';
+    }
+
     protected function render(string $template, array $variables = []): void
     {
         $viewsPath = dirname(__DIR__, 2) . '/public/views';
