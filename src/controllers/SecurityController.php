@@ -12,19 +12,19 @@ final class SecurityController extends AppController
             $formType = $_POST['form_type'] ?? '';
 
             if ($formType === 'login') {
-                $username = $_POST['username'] ?? '';
+                $email = $_POST['email'] ?? '';
                 $password = $_POST['password'] ?? '';
 
-                if ($username === 'admin' && $password === 'admin') {
+                if ($email === 'admin@admin.com' && $password === 'admin') {
                     session_start();
-                    $_SESSION['user'] = $username;
+                    $_SESSION['user'] = $email;
                     header('Location: /profile');
                     exit;
                 }
 
                 $this->render('login', [
                     'pageTitle' => 'Logowanie',
-                    'error' => 'Nieprawidłowa nazwa użytkownika lub hasło.',
+                    'error' => 'Nieprawidłowy adres e-mail lub hasło.',
                 ]);
                 return;
             }
