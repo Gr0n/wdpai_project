@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/AppController.php';
+
+final class UploadController extends AppController
+{
+    public function upload(): void
+    {
+        if ($this->isPost()) {
+            #jest zalogowany
+
+            $title = $_POST['title'] ?? '';
+            #$artist = $_POST['artist'] ?? '';
+            $description = $_POST['description'] ?? '';
+            $category = $_POST['category'] ?? '';
+            $file = $_POST['file'] ?? '';
+        }
+    }
+}
